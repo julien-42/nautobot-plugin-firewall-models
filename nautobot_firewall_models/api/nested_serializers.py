@@ -1,6 +1,7 @@
 """Nested serializers."""
 from nautobot.core.api import WritableNestedSerializer
 from rest_framework.serializers import CharField, HyperlinkedIdentityField
+from nautobot.dcim.api.nested_serializers import NestedInterfaceSerializer
 
 from nautobot_firewall_models import models
 
