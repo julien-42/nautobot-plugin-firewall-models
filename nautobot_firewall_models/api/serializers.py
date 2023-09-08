@@ -200,9 +200,7 @@ class ZoneSerializer(TaggedObjectSerializer, StatusModelSerializerMixin, Nautobo
     """Zone Serializer."""
 
     url = serializers.HyperlinkedIdentityField(view_name="plugins-api:nautobot_firewall_models-api:zone-detail")
-    interfaces = SerializedPKRelatedField(
-        queryset=Interface.objects.all(), serializer=NestedInterfaceSerializer, required=False, many=True
-    )
+    interfaces = NestedInterfaceSerializer(required=False, many=True)
 
     class Meta:
         """Meta attributes."""
