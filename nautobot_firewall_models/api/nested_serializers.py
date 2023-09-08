@@ -47,9 +47,10 @@ class NestedZoneSerializer(WritableNestedSerializer):
     """Nested serializer for Zone."""
 
     url = HyperlinkedIdentityField(view_name="plugins-api:nautobot_firewall_models-api:zone-detail")
+    interfaces = NestedInterfaceSerializer(required=False, many=True)
 
     class Meta:
         """Meta attributes."""
 
         model = models.Zone
-        fields = ["id", "url", "name"]
+        fields = ["id", "url", "interfaces", "name"]
