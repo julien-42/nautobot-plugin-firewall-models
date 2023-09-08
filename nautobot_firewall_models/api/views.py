@@ -108,7 +108,7 @@ class PolicyViewSet(NautobotModelViewSet):
     """Policy viewset."""
 
     queryset = models.Policy.objects.all()
-    serializer_class = serializers.PolicySerializer
+    serializer_class = serializers.PolicyDeepSerializer
     filterset_class = filters.PolicyFilterSet
 
     def get_serializer_class(self):
